@@ -1,0 +1,13 @@
+# Use official Apache image
+FROM httpd:2.4
+
+WORKDIR /usr/local/apache2/htdocs/
+
+# Copy the HTML file to Apache's default root
+COPY index.html .
+
+# Expose port 80 (default HTTP)
+EXPOSE 80
+
+# Apache runs automatically from base image
+CMD ["httpd-foreground"]
